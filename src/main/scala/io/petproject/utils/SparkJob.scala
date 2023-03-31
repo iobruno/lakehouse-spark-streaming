@@ -7,8 +7,8 @@ trait SparkJob {
   lazy val sparkSession: SparkSession = {
     SparkSession
       .builder()
-      .appName("sparkApp")
-      .master("local[*]")
+      .appName(Config.getEnvOrFail("SPARK_APP_NAME"))
+      .master(Config.getEnv("SPARK_MASTER", default = "local[*]"))
       .getOrCreate()
   }
 
