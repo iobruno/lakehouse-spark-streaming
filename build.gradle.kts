@@ -2,6 +2,7 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     scala
+    application
     id("com.github.johnrengelman.shadow") version "8.1.0"
 }
 
@@ -11,6 +12,7 @@ repositories {
 
 val artifactName = "spark-kafka-stream-processing"
 val artifactVersion = "1.0-SNAPSHOT"
+
 
 dependencies {
     val scalaVersion = "2.13"
@@ -34,11 +36,14 @@ dependencies {
 
 }
 
+application {
+    mainClass.set("io.petproject.Application")
+}
+
 tasks.withType<ShadowJar> {
-    archiveBaseName.set("${artifactName}-${artifactVersion}")
-    mergeServiceFiles()
-    manifest {
-        attributes(mapOf("Main-Class" to "io.petproject.Application"))
-    }
+    archiveBaseName.set(artifactName)
+    version = "1.0"
+    archiveClassifier.set("")
     isZip64 = true
+    mergeServiceFiles()
 }

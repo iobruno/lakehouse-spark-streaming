@@ -111,8 +111,12 @@ terraform.rc
 .history
 .ionide
 
+### Local Machine Configurations ### 
 
-### macOS ###
+# macOS #
 **/.DS_Store
+
+# Docker volume for Kafka and ZooKeeper
+**/volumes/**
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,scala,gradle,terraform,visualstudiocode
