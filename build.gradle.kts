@@ -14,10 +14,16 @@ val artifactVersion = "1.0-SNAPSHOT"
 
 dependencies {
     val scalaVersion = "2.13"
+    val sparkVersion = "3.3.2"
     val scalaLogging = "3.9.5"
     val logbackVersion = "1.4.6"
 
     implementation("org.scala-lang:scala-library:$scalaVersion.10")
+
+    /** Spark **/
+    /** Change implementation to compileOnly for Production **/
+    implementation("org.apache.spark:spark-sql_$scalaVersion:$sparkVersion")
+    implementation("org.apache.spark:spark-sql-kafka-0-10_$scalaVersion:$sparkVersion")
 
     /** Logging **/
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
