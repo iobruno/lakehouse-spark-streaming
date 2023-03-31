@@ -14,8 +14,18 @@ val artifactVersion = "1.0-SNAPSHOT"
 
 dependencies {
     val scalaVersion = "2.13"
+    val scalaLogging = "3.9.5"
+    val logbackVersion = "1.4.6"
 
     implementation("org.scala-lang:scala-library:$scalaVersion.10")
+
+    /** Logging **/
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
+    implementation("com.typesafe.scala-logging:scala-logging_$scalaVersion:$scalaLogging")
+
+    /** Utils **/
+    implementation("com.typesafe:config:1.4.2")
+
 }
 
 tasks.withType<ShadowJar> {

@@ -1,9 +1,11 @@
 package io.petproject
 
-object Application {
+import com.typesafe.scalalogging.LazyLogging
+
+object Application extends LazyLogging {
 
   def main(args: Array[String]): Unit = {
-    println("Hello world")
+    logger.info("Starting Spark Structured Streaming App...")
   }
 
 }
