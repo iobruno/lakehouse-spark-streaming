@@ -3,10 +3,10 @@
 setup: minimal-setup
 
 full-setup: fatjar
-	@docker-compose -f docker-compose.complex.yml up -d
+	@docker-compose -f docker-compose-complex.yml up -d
 
 minimal-setup: fatjar
-	@docker-compose -f docker-compose.simple.yml up -d
+	@docker-compose -f docker-compose-simple.yml up -d
 
 fatjar:
 	@./gradlew clean shadowJar

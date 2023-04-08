@@ -10,9 +10,8 @@ repositories {
     mavenCentral()
 }
 
-val artifactName = "spark-kafka-stream-processing"
+val artifactName = "lakehouse-spark-streaming"
 val artifactVersion = "1.0-SNAPSHOT"
-
 
 dependencies {
     val scalaVersion = "2.13"
@@ -33,7 +32,6 @@ dependencies {
 
     /** Utils **/
     implementation("com.typesafe:config:1.4.2")
-
 }
 
 application {

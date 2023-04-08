@@ -1,1 +1,1 @@
-rootProject.name = "spark-streaming-etl"
+rootProject.name = "lakehouse-spark-streaming"
